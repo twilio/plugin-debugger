@@ -1,0 +1,55 @@
+{
+  "name": "@twilio/plugin-debugger",
+  "description": "Explore debug events generated during your Twilio use.",
+  "version": "0.0.1",
+  "author": "Twilio @twilio",
+  "bugs": "https://github.com/twilio/plugin-debugger/issues",
+  "dependencies": {
+    "@oclif/command": "^1.5.12",
+    "@oclif/config": "^1.12.10",
+    "@twilio/cli-core": "git+ssh://git@code.hq.twilio.com:twilio/cli-core.git"
+  },
+  "devDependencies": {
+    "@oclif/dev-cli": "^1.21.3",
+    "@oclif/plugin-help": "^2.1.6",
+    "@oclif/test": "^1.2.4",
+    "@twilio/cli-test": "git+ssh://git@code.hq.twilio.com:twilio/cli-test.git",
+    "chai": "^4.2.0",
+    "eslint": "^4.19.1",
+    "eslint-config-oclif": "^1.5.1",
+    "globby": "^8.0.2",
+    "mocha": "^5.2.0",
+    "nyc": "^13.3.0",
+    "rimraf": "^2.6.3"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "/npm-shrinkwrap.json",
+    "/oclif.manifest.json",
+    "/src",
+    "/yarn.lock"
+  ],
+  "homepage": "https://github.com/twilio/plugin-debugger",
+  "keywords": [
+    "oclif-plugin"
+  ],
+  "license": "MIT",
+  "oclif": {
+    "name": "debugger",
+    "commands": "./src/commands",
+    "bin": "oclif-example",
+    "devPlugins": [
+      "@oclif/plugin-help"
+    ]
+  },
+  "repository": "twilio/plugin-debugger",
+  "scripts": {
+    "postpack": "rimraf oclif.manifest.json npm-shrinkwrap.json",
+    "posttest": "eslint --ignore-path .gitignore . && npm audit",
+    "prepack": "oclif-dev manifest && oclif-dev readme && npm shrinkwrap && git checkout -- package-lock.json",
+    "test": "nyc --check-coverage --lines 90 --reporter=html --reporter=text mocha --forbid-only \"test/**/*.test.js\"",
+    "version": "oclif-dev readme && git add README.md"
+  }
+}
