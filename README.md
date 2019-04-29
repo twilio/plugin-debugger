@@ -11,27 +11,27 @@ Access and stream your Twilio debugger logs.
 <!-- usage -->
 ```sh-session
 $ npm install -g @twilio/plugin-debugger
-$ oclif-example COMMAND
+$ twilio COMMAND
 running command...
-$ oclif-example (-v|--version|version)
-@twilio/plugin-debugger/0.0.1 darwin-x64 node-v11.12.0
-$ oclif-example --help [COMMAND]
+$ twilio (-v|--version|version)
+@twilio/plugin-debugger/0.0.1 darwin-x64 node-v11.13.0
+$ twilio --help [COMMAND]
 USAGE
-  $ oclif-example COMMAND
+  $ twilio COMMAND
 ...
 ```
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`oclif-example debugger:logs:list`](#oclif-example-debuggerlogslist)
+* [`twilio debugger:logs:list`](#twilio-debuggerlogslist)
 
-## `oclif-example debugger:logs:list`
+## `twilio debugger:logs:list`
 
 Show a list of log events generated for the account
 
 ```
 USAGE
-  $ oclif-example debugger:logs:list
+  $ twilio debugger:logs:list
 
 OPTIONS
   -l, --log-level=(debug|info|warn|error|none)  [default: info] Level of logging messages

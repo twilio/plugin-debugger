@@ -92,8 +92,7 @@ class DebuggerLogsList extends TwilioClientCommand {
 
 DebuggerLogsList.description = `Show a list of log events generated for the account
 
-Argg, this is only a subset of the log events and live tailing isn't quite ready! Think this is a killer feature? Email aroach@twilio.com and tell him.
-`;
+Argg, this is only a subset of the log events and live tailing isn't quite ready! Think this is a killer feature? Email aroach@twilio.com and tell him.`;
 
 DebuggerLogsList.PropertyFlags = {
   'log-level': flags.enum({
