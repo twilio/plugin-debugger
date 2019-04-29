@@ -1,24 +1,24 @@
 {
   "name": "@twilio/plugin-debugger",
-  "description": "Explore debug events generated during your Twilio use.",
+  "description": "Explore debug events generated during your Twilio use",
   "version": "0.0.1",
   "author": "Twilio @twilio",
-  "bugs": "https://github.com/twilio/plugin-debugger/issues",
+  "bugs": "https://github.com/twilio/twilio-cli/issues",
   "dependencies": {
     "@oclif/command": "^1.5.12",
     "@oclif/config": "^1.12.10",
-    "@twilio/cli-core": "git+ssh://git@code.hq.twilio.com:twilio/cli-core.git"
+    "@twilio/cli-core": "^0.0.1"
   },
   "devDependencies": {
     "@oclif/dev-cli": "^1.21.3",
     "@oclif/test": "^1.2.4",
-    "@twilio/cli-test": "git+ssh://git@code.hq.twilio.com:twilio/cli-test.git",
+    "@twilio/cli-test": "^0.0.1",
     "chai": "^4.2.0",
     "eslint": "^4.19.1",
     "eslint-config-oclif": "^1.5.1",
     "globby": "^8.0.2",
     "mocha": "^5.2.0",
-    "nyc": "^13.3.0",
+    "nyc": "^14.1.0",
     "rimraf": "^2.6.3"
   },
   "engines": {
@@ -43,7 +43,10 @@
       "@oclif/plugin-help"
     ]
   },
-  "repository": "twilio/plugin-debugger",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/twilio/plugin-debugger.git"
+  },
   "scripts": {
     "postpack": "rimraf oclif.manifest.json npm-shrinkwrap.json",
     "posttest": "eslint --ignore-path .gitignore . && npm audit",
