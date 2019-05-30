@@ -1,6 +1,6 @@
 {
   "name": "@twilio/plugin-debugger",
-  "description": "Explore debug events generated during your Twilio use",
+  "description": "explore debug events generated during your Twilio use",
   "version": "1.0.0",
   "author": "Twilio @twilio",
   "bugs": "https://github.com/twilio/twilio-cli/issues",
@@ -41,7 +41,12 @@
     "bin": "twilio",
     "devPlugins": [
       "@oclif/plugin-help"
-    ]
+    ],
+    "topics": {
+      "debugger": {
+        "description": "explore debug events generated during your Twilio use"
+      }
+    }
   },
   "repository": {
     "type": "git",
