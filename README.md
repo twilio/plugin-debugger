@@ -14,7 +14,7 @@ $ npm install -g @twilio/plugin-debugger
 $ twilio COMMAND
 running command...
 $ twilio (-v|--version|version)
-@twilio/plugin-debugger/0.0.1 darwin-x64 node-v11.13.0
+@twilio/plugin-debugger/1.0.1 darwin-x64 node-v10.15.3
 $ twilio --help [COMMAND]
 USAGE
   $ twilio COMMAND
@@ -34,9 +34,9 @@ USAGE
   $ twilio debugger:logs:list
 
 OPTIONS
-  -l, --log-level=(debug|info|warn|error|none)  [default: info] Level of logging messages
-  -o, --output-format=(columns|json|tsv)        [default: columns] Format of command output
-  -p, --project=project                         [default: default] Shorthand identifier for your Twilio project
+  -l, --log-level=(debug|info|warn|error|none)  [default: info] Level of logging messages.
+  -o, --output-format=(columns|json|tsv)        [default: columns] Format of command output.
+  -p, --project=project                         [default: default] Shorthand identifier for your Twilio project.
   -s, --streaming                               Continuously stream incoming log events
   --end-date=end-date                           Only show log events on or before this date
 
@@ -51,5 +51,5 @@ DESCRIPTION
   Email aroach@twilio.com and tell him.
 ```
 
-_See code: [src/commands/debugger/logs/list.js](https://github.com/twilio/plugin-debugger/blob/v0.0.1/src/commands/debugger/logs/list.js)_
+_See code: [src/commands/debugger/logs/list.js](https://github.com/twilio/plugin-debugger/blob/v1.0.1/src/commands/debugger/logs/list.js)_
 <!-- commandsstop -->
