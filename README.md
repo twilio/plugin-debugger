@@ -47,7 +47,7 @@ OPTIONS
   --start-date=start-date                       Only show log events on or after this date
 
 DESCRIPTION
-  Argg, this is only a subset of the log events and live tailing isn't quite ready! Think this is a killer feature? 
+  Argg, this is only a subset of the log events and live tailing isn't quite ready! Think this is a killer feature?
   Email aroach@twilio.com and tell him.
 ```
 
