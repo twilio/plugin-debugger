@@ -1,5 +1,6 @@
 const { flags } = require('@oclif/command');
 const { TwilioClientCommand } = require('@twilio/cli-core').baseCommands;
+const { TwilioCliError } = require('@twilio/cli-core').services.error;
 const { sleep } = require('@twilio/cli-core').services.JSUtils;
 
 const STREAMING_DELAY_IN_SECONDS = 1;
@@ -13,9 +14,7 @@ class DebuggerLogsList extends TwilioClientCommand {
     this.latestLogEvents = [];
   }
 
-  async run() {
-    await super.run();
-
+  async runCommand() {
     const props = this.parseProperties() || {};
     this.validatePropsAndFlags(props, this.flags);
 
@@ -42,21 +41,14 @@ class DebuggerLogsList extends TwilioClientCommand {
   }
 
   validatePropsAndFlags(props, flags) {
-    const errors = [];
-
     if (flags.streaming) {
       if (props.startDate && new Date(props.startDate) > new Date()) {
-        errors.push('"streaming" flag does not support a future "start-date" value');
+        throw new TwilioCliError('"streaming" flag does not support a future "start-date" value');
       }
 
       if (props.endDate) {
-        errors.push('"streaming" flag does not support the "end-date" option');
+        throw new TwilioCliError('"streaming" flag does not support the "end-date" option');
       }
-    }
-
-    if (errors.length > 0) {
-      errors.forEach(error => this.logger.error(error));
-      this.exit(1);
     }
   }
 
@@ -66,8 +58,7 @@ class DebuggerLogsList extends TwilioClientCommand {
 
       return this.filterLogEvents(logEvents);
     } catch (err) {
-      this.logger.error(err.message);
-      this.exit(err.code);
+      throw new TwilioCliError(err.message, err.code);
     }
   }
 
