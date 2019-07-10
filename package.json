@@ -7,7 +7,7 @@
   "dependencies": {
     "@oclif/command": "^1.5.16",
     "@oclif/config": "^1.13.1",
-    "@twilio/cli-core": "^2.0.1"
+    "@twilio/cli-core": "^2.0.2"
   },
   "devDependencies": {
     "@oclif/command": "^1.5.16",
