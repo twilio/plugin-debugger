@@ -14,7 +14,7 @@ $ npm install -g @twilio/plugin-debugger
 $ twilio COMMAND
 running command...
 $ twilio (-v|--version|version)
-@twilio/plugin-debugger/1.1.0 darwin-x64 node-v10.16.0
+@twilio/plugin-debugger/1.1.1 darwin-x64 node-v10.16.0
 $ twilio --help [COMMAND]
 USAGE
   $ twilio COMMAND
@@ -51,5 +51,5 @@ DESCRIPTION
   us know here: https://bit.ly/twilio-cli-feedback
 ```
 
-_See code: [src/commands/debugger/logs/list.js](https://github.com/twilio/plugin-debugger/blob/v1.1.0/src/commands/debugger/logs/list.js)_
+_See code: [src/commands/debugger/logs/list.js](https://github.com/twilio/plugin-debugger/blob/v1.1.1/src/commands/debugger/logs/list.js)_
 <!-- commandsstop -->
