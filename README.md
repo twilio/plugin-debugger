@@ -4,23 +4,23 @@
 Access and stream your Twilio debugger logs.
 
 <!-- toc -->
+* [Setup](#setup)
 * [Usage](#usage)
 * [Commands](#commands)
 <!-- tocstop -->
+## Setup
+
+Head over to the [twilio-cli documentation](https://www.twilio.com/docs/twilio-cli/quickstart).
+
 # Usage
-<!-- usage -->
+
 ```sh-session
-$ npm install -g @twilio/plugin-debugger
-$ twilio COMMAND
-running command...
-$ twilio (-v|--version|version)
-@twilio/plugin-debugger/1.1.3 darwin-x64 node-v10.16.0
-$ twilio --help [COMMAND]
+$ twilio --help debugger
 USAGE
-  $ twilio COMMAND
+  $ twilio debugger
 ...
 ```
-<!-- usagestop -->
+
 # Commands
 <!-- commands -->
 * [`twilio debugger:logs:list`](#twilio-debuggerlogslist)
