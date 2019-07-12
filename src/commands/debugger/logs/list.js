@@ -2,6 +2,7 @@ const { flags } = require('@oclif/command');
 const { TwilioClientCommand } = require('@twilio/cli-core').baseCommands;
 const { TwilioCliError } = require('@twilio/cli-core').services.error;
 const { sleep } = require('@twilio/cli-core').services.JSUtils;
+const querystring = require('querystring');
 
 const STREAMING_DELAY_IN_SECONDS = 1;
 const STREAMING_HISTORY_IN_MINUTES = 5;
@@ -75,8 +76,20 @@ class DebuggerLogsList extends TwilioClientCommand {
 
   outputLogEvents(logEvents) {
     if (logEvents.length > 0) {
+      logEvents.forEach(e => {
+        e.alertText = this.formatAlertText(e.alertText);
+      });
       this.output(logEvents, this.flags.properties, { showHeaders: this.showHeaders });
       this.showHeaders = false;
+    }
+  }
+
+  formatAlertText(text) {
+    try {
+      const data = querystring.parse(text);
+      return data.parserMessage || data.Msg || text;
+    } catch (e) {
+      return text;
     }
   }
 }
