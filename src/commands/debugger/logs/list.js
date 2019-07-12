@@ -76,11 +76,8 @@ class DebuggerLogsList extends TwilioClientCommand {
 
   outputLogEvents(logEvents) {
     if (logEvents.length > 0) {
-      // Provide a human readable error message
-      logEvents = logEvents.map(e => {
-        return Object.assign({}, e, {
-          alertText: this.formatAlertText(e.alertText)
-        });
+      logEvents.forEach(e => {
+        e.alertText = this.formatAlertText(e.alertText);
       });
       this.output(logEvents, this.flags.properties, { showHeaders: this.showHeaders });
       this.showHeaders = false;
@@ -90,7 +87,7 @@ class DebuggerLogsList extends TwilioClientCommand {
   formatAlertText(text) {
     try {
       const data = querystring.parse(text);
-      return data.Msg || text;
+      return data.parserMessage || data.Msg || text;
     } catch (e) {
       return text;
     }
