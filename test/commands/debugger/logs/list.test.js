@@ -18,6 +18,14 @@ const WARN_LOG = {
   alert_text: 'How do you do!?',
   date_created: '1969-02-24T20:40:30Z'
 };
+
+const ERROR_LOG = {
+  sid: 'NO22222222222222222222222222222222',
+  log_level: 'error',
+  error_code: '22222',
+  alert_text: 'sourceComponent=14100&httpResponse=502&url=https%3A%2F%2Fdemo.stwilio.com%2Fwelcome%2Fsms%2Freply%2F&ErrorCode=11210&LogLevel=ERROR&Msg=HTTP+bad+host+name&EmailNotification=false',
+  date_created: '1969-02-24T20:40:30Z'
+};
 /* eslint-enable camelcase */
 
 const testConfig = test
@@ -39,6 +47,11 @@ describe('debugger:logs:list', () => {
     testHelper([], 200, { alerts: [INFO_LOG] })
       .it('prints alert/log events', ctx => {
         expect(ctx.stdout).to.contain(INFO_LOG.alert_text);
+      });
+
+    testHelper([], 200, { alerts: [ERROR_LOG] })
+      .it('prints errors', ctx => {
+        expect(ctx.stdout).to.contain('HTTP bad host name');
       });
 
     testHelper([
