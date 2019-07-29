@@ -62,10 +62,10 @@ describe('debugger:logs:list', () => {
         expect(ctx.stdout).to.contain(WARN_LOG.alert_text);
       });
 
-    testHelper([], 404, { code: 12345, message: 'Now you gonna die!' })
+    testHelper([], 404, { code: 12345, message: 'Some random error' })
       .exit(12345)
       .it('prints errors', ctx => {
-        expect(ctx.stderr).to.contain('Now you gonna die!');
+        expect(ctx.stderr).to.contain('Some random error');
       });
   });
 
@@ -79,7 +79,7 @@ describe('debugger:logs:list', () => {
           .times(2)
           .reply(200, { alerts: [INFO_LOG, WARN_LOG, INFO_LOG] })
           .get('/v1/Alerts').query(true)
-          .reply(404, { code: 999, message: 'Now you gonna die!' });
+          .reply(404, { code: 999, message: 'Some random error' });
       })
       .twilioCommand(DebuggerLogsList, ['--streaming'])
       .exit(999)
@@ -87,7 +87,7 @@ describe('debugger:logs:list', () => {
         expect(ctx.stdout.match(INFO_LOG.error_code)).to.have.length(1);
         expect(ctx.stdout.match(WARN_LOG.alert_text)).to.have.length(1);
 
-        expect(ctx.stderr).to.contain('Now you gonna die!');
+        expect(ctx.stderr).to.contain('Some random error');
       });
 
     testConfig
