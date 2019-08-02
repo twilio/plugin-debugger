@@ -31,7 +31,7 @@ const ERROR_LOG = {
 const testConfig = test
   .stdout()
   .stderr()
-  .twilioFakeProject(ConfigData)
+  .twilioFakeProfile(ConfigData)
   .twilioCliEnv(Config);
 
 describe('debugger:logs:list', () => {
