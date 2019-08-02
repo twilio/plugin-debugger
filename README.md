@@ -35,7 +35,7 @@ USAGE
 OPTIONS
   -l=(debug|info|warn|error|none)           [default: info] Level of logging messages.
   -o=(columns|json|tsv)                     [default: columns] Format of command output.
-  -p, --profile=profile                     Shorthand identifier for your Twilio profile.
+  -p, --profile=profile                     Shorthand identifier for your profile.
   -s, --streaming                           Continuously stream incoming log events
   --end-date=end-date                       Only show log events on or before this date
   --log-level=(error|warning|notice|debug)  Only show log events for this log level
@@ -50,5 +50,5 @@ DESCRIPTION
   us know here: https://bit.ly/twilio-cli-feedback
 ```
 
-_See code: [src/commands/debugger/logs/list.js](https://github.com/twilio/plugin-debugger/blob/v1.1.5/src/commands/debugger/logs/list.js)_
+_See code: [src/commands/debugger/logs/list.js](https://github.com/twilio/plugin-debugger/blob/v1.1.6/src/commands/debugger/logs/list.js)_
 <!-- commandsstop -->
