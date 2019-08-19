@@ -6,8 +6,8 @@
   "bugs": "https://github.com/twilio/twilio-cli/issues",
   "dependencies": {
     "@oclif/command": "^1.5.18",
-    "@oclif/config": "^1.13.2",
-    "@twilio/cli-core": "^3.0.1"
+    "@oclif/config": "^1.13.3",
+    "@twilio/cli-core": "^3.0.2"
   },
   "devDependencies": {
     "@oclif/dev-cli": "^1.22.2",
