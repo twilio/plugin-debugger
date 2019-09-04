@@ -50,5 +50,5 @@ DESCRIPTION
   us know here: https://twil.io/twilio-cli-feedback
 ```
 
-_See code: [src/commands/debugger/logs/list.js](https://github.com/twilio/plugin-debugger/blob/v1.1.7/src/commands/debugger/logs/list.js)_
+_See code: [src/commands/debugger/logs/list.js](https://github.com/twilio/plugin-debugger/blob/v1.1.8/src/commands/debugger/logs/list.js)_
 <!-- commandsstop -->
