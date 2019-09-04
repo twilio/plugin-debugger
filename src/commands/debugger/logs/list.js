@@ -15,7 +15,9 @@ class DebuggerLogsList extends TwilioClientCommand {
     this.latestLogEvents = [];
   }
 
-  async runCommand() {
+  async run() {
+    await super.run();
+
     const props = this.parseProperties() || {};
     this.validatePropsAndFlags(props, this.flags);
 
