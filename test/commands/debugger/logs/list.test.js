@@ -30,7 +30,6 @@ const ERROR_LOG = {
 
 const testConfig = test
   .stdout()
-  .stderr()
   .twilioFakeProfile(ConfigData)
   .twilioCliEnv(Config);
 
@@ -63,10 +62,8 @@ describe('debugger:logs:list', () => {
       });
 
     testHelper([], 404, { code: 12345, message: 'Some random error' })
-      .exit(12345)
-      .it('prints errors', ctx => {
-        expect(ctx.stderr).to.contain('Some random error');
-      });
+      .catch(/12345.*Some random error/)
+      .it('prints errors');
   });
 
   describe('streaming', function () {
@@ -82,22 +79,20 @@ describe('debugger:logs:list', () => {
           .reply(404, { code: 999, message: 'Some random error' });
       })
       .twilioCommand(DebuggerLogsList, ['--streaming'])
-      .exit(999)
+      .catch(/999.*Some random error/)
       .it('streams and then quits', ctx => {
         expect(ctx.stdout.match(INFO_LOG.error_code)).to.have.length(1);
         expect(ctx.stdout.match(WARN_LOG.alert_text)).to.have.length(1);
-
-        expect(ctx.stderr).to.contain('Some random error');
       });
 
     testConfig
       .twilioCommand(DebuggerLogsList, ['--streaming', '--end-date', '2020-01-01'])
-      .exit(1)
+      .catch(/does not support/)
       .it('does not like end dates when steaming');
 
     testConfig
       .twilioCommand(DebuggerLogsList, ['--streaming', '--start-date', '3005-01-01'])
-      .exit(1)
-      .it('does not like futuristic stat dates');
+      .catch(/does not support/)
+      .it('does not like futuristic start dates');
   });
 });
