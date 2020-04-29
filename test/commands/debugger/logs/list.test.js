@@ -54,8 +54,10 @@ describe('debugger:logs:list', () => {
       });
 
     testHelper([
-      '--start-date', '2000-01-01',
-      '--end-date', '2001-01-01'
+      '--start-date',
+      '2000-01-01',
+      '--end-date',
+      '2001-01-01'
     ], 200, { alerts: [WARN_LOG] })
       .it('accepts date args', ctx => {
         expect(ctx.stdout).to.contain(WARN_LOG.alert_text);

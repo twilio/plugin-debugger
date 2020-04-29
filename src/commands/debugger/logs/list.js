@@ -86,7 +86,7 @@ class DebuggerLogsList extends TwilioClientCommand {
     try {
       const data = querystring.parse(text);
       return data.parserMessage || data.Msg || text;
-    } catch (e) {
+    } catch (error) {
       return text;
     }
   }
