@@ -36,6 +36,7 @@
     "name": "debugger",
     "commands": "./src/commands",
     "bin": "twilio",
+    "repositoryPrefix": "<%- repo %>/blob/<%- version %>/<%- commandPath %>",
     "devPlugins": [
       "@oclif/plugin-help"
     ],
