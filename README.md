@@ -3,6 +3,8 @@
 
 Access and stream your Twilio debugger logs.
 
+**The default branch name for this repository has been changed to `main` as of 07/22/2020.**
+
 <!-- toc -->
 * [Usage](#usage)
 * [Commands](#commands)
