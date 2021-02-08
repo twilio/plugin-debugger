@@ -1,8 +1,8 @@
 {
-  "name": "cli-101",
-  "description": "explore cli training",
-  "version": "1.0",
-  "author": "Gareth Paul Jones",
+  "name": "@twilio/plugin-debugger",
+  "description": "explore debug events generated during your Twilio use",
+  "version": "1.1.9",
+  "author": "Twilio @twilio",
   "bugs": "https://github.com/twilio/twilio-cli/issues",
   "dependencies": {
     "@oclif/command": "^1.5.20",
@@ -27,7 +27,7 @@
     "/oclif.manifest.json",
     "/src"
   ],
-  "homepage": "https://garethpaul.com/cli",
+  "homepage": "https://github.com/twilio/plugin-debugger",
   "keywords": [
     "oclif-plugin"
   ],
@@ -41,14 +41,14 @@
       "@oclif/plugin-help"
     ],
     "topics": {
-      "cli-training": {
-        "description": "cli-training"
+      "debugger": {
+        "description": "explore debug events generated during your Twilio use"
       }
     }
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/garethpaul/cli-training.git"
+    "url": "https://github.com/twilio/plugin-debugger.git"
   },
   "scripts": {
     "postpack": "rm -f oclif.manifest.json",
